@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyFavouriteBook</string>
+    <string name="user_name">User name</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="book_name">Book name</string>
+    <string name="book_author_name">Bookauthorname</string>
+    <string name="add_book">Add book</string>
+    <string name="book_image_url">Book imge url</string>
+    <string name="is_released">Is Released</string>
+    <string name="empty_fav_list">Favourite list is empty please add book to favourite</string>
+    <string name="book_desc">book description</string>
+</resources>
