@@ -10,4 +10,14 @@
     <string name="is_released">Is Released</string>
     <string name="empty_fav_list">Favourite list is empty please add book to favourite</string>
     <string name="book_desc">book description</string>
+    <string name="register">Register</string>
+    <string name="add_book_to_fav">Add new Book to fav</string>
+    <string name="please_enter_user_name">Please enter user name</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="please_enter_confirm_password">Please enter confirm password</string>
+    <string name="check_register">Please register to login to app</string>
+    <string name="please_confirm_password">Please Confirm your passord</string>
+    <string name="insert_success">Insert User success</string>
+    <string name="login_success">Login success</string>
+    <string name="user_name_or_password_error">Error in your password or use name</string>
 </resources>

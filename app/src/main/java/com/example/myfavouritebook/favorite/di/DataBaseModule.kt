@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.example.myfavouritebook.favorite.dp.BookDao
 import com.example.myfavouritebook.favorite.dp.BookDataBase
+import com.example.myfavouritebook.register.dp.UserDao
 
 import dagger.Module
 import dagger.Provides
@@ -19,7 +20,7 @@ class DataBaseModule {
     @Provides
     @Singleton
     fun getRoomDataBase(application: Application):BookDataBase{
-        return Room.databaseBuilder(application,BookDataBase::class.java,"pokemon_dp")
+        return Room.databaseBuilder(application,BookDataBase::class.java,"book_dp")
             .fallbackToDestructiveMigration()
             .allowMainThreadQueries()
             .build()
@@ -28,7 +29,12 @@ class DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideDao(bookDataBase: BookDataBase):BookDao =bookDataBase.bookDao()
+    fun provideBookDao(bookDataBase: BookDataBase):BookDao =bookDataBase.bookDao()
+
+
+    @Singleton
+    @Provides
+    fun provideUSerDao(bookDataBase: BookDataBase):UserDao =bookDataBase.userDao()
 
 
 }

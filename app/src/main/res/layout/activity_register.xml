@@ -7,19 +7,20 @@
     <data>
         <variable name="user" type="com.example.myfavouritebook.login.model.User"/>
     </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/_16sdp"
-    tools:context=".login.LoginActivity">
+    tools:context=".register.ui.RegisterActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/guideline"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"
+        app:layout_constraintGuide_percent="0.3"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,7 +38,6 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:text="@={user.userName}"
-
             android:hint="@string/user_name"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,9 +57,29 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:text="@={user.passWord}"
+            android:inputType="textPassword"
+            android:hint="@string/password"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPassWord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/passWord"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_16sdp"
+        >
+
+        <EditText
+            android:id="@+id/et_ConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:text="@={user.confirmPassword}"
             android:hint="@string/password"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,30 +89,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/login"
-        android:text="@string/login"
+        android:id="@+id/register"
+        android:text="@string/register"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/passWord"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassWord"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_16sdp"
-
         />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_register"
-        android:text="@string/check_register"
-        app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/black"
-        android:layout_marginTop="@dimen/_36sdp"
-        />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
