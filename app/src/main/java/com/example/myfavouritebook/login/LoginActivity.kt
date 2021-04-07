@@ -11,6 +11,8 @@ import com.example.myfavouritebook.favorite.ui.FavouriteActivity
 import com.example.myfavouritebook.login.model.User
 import com.example.myfavouritebook.register.ui.RegisterActivity
 import com.example.myfavouritebook.register.ui.UserViewModel
+import com.example.myfavouritebook.testFlow.FlowActivity
+import com.example.myfavouritebook.utils.goToActivity
 import com.example.myfavouritebook.utils.hideKeyboard
 import com.example.myfavouritebook.utils.validate
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,17 +30,19 @@ class LoginActivity : AppCompatActivity() {
         user = User()
         binding.user = user
         login()
+
         register()
 
     }
 
     private fun register() {
         binding.tvRegister.setOnClickListener {
-            Intent(this, RegisterActivity::class.java).apply {
-                startActivity(this)
-            }
+           goToActivity(RegisterActivity())
         }
 
+        binding.tvTestFlow.setOnClickListener {
+            goToActivity(FlowActivity())
+        }
     }
 
 
@@ -68,9 +72,7 @@ class LoginActivity : AppCompatActivity() {
             }
             else{
                 Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
-                Intent(this, FavouriteActivity::class.java).apply {
-                    startActivity(this)
-                }
+               goToActivity(FavouriteActivity())
             }
 
         }

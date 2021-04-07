@@ -6,6 +6,8 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.myfavouritebook.favorite.model.Book
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 
 
 @Dao
@@ -23,6 +25,6 @@ interface BookDao {
 
 
     @Query("select* from book_table")
-    fun getFavBooks(): LiveData<List<Book>>
+    fun getFavBooks(): Flow<List<Book>>
 
 }
